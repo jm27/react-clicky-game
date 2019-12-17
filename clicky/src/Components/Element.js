@@ -1,16 +1,15 @@
-import React from "react";
 
+import React from "react";
 function Element(props) {
   return (
-    <div
-      className="card"
-      style={{
-        backgroundImage: props.image ? `url(${props.image})` : "none"
-      }}
-    >
-      {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
-    </div>
+    <img 
+      id={props.id}
+      value={props.value}
+      onClick={props.onClick}
+      className="img-thumbnail float-left  img-fluid w-100 h-100 "
+      src={props.value}
+      alt=""
+    ></img>
   );
 }
-
 export default Element;
