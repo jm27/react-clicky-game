@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Element from "./Element";
 import Nav from "./Nav";
 
-
-
 class Wrapper extends Component {
   // Setting the component's initial state
   state = {
@@ -11,7 +9,7 @@ class Wrapper extends Component {
       { img: "./img/00.png", id: "a" },
       { img: "./img/01.jpg", id: "b" },
       { img: "./img/02.jpg", id: "c" },
-      { img: "./img/03.jpg", id: "d" },
+      { img: "./img/03.png", id: "d" },
       { img: "./img/04.jpg", id: "e" },
       { img: "./img/05.jpg", id: "f" },
       { img: "./img/06.jpg", id: "g" },
@@ -21,32 +19,27 @@ class Wrapper extends Component {
       { img: "./img/10.png", id: "k" },
       { img: "./img/11.jpg", id: "l" }
     ],
-    clickedElements: []
+    clickedElements: [],
+    score: 0,
+    highScore: 0,
+    lost: false
   };
 
   handleOnClick = event => {
-    console.log("hello hamrah");
     // Getting the value and name of the input which triggered the change
     const { id } = event.target;
+    this.setState({ score: this.state.score + 1 });
+
     this.state.clickedElements.forEach(element => {
-      console.log(id, element.id);
       if (id === element.id) {
-        console.log("lost");
-        this.setState(() => {
-          return { clickedElements: [] };
-        });
-        return (
-          console.log("heyyyy"),
-          <div>
-            
-            <Nav result={"you lost!"}></Nav>
-          </div>
-        );
+        if (this.state.highScore < this.state.score) {
+          this.setState({ highScore: this.state.score });
+        }
+        this.setState({ lost: true, score: 0 });
       }
     });
     this.state.clickedElements.push({ id: id });
     this.shuffle();
-    console.log(this.state.clickedElements);
   };
   shuffle = () => {
     const a = this.state.elements;
@@ -56,18 +49,48 @@ class Wrapper extends Component {
     }
     return this.setState(a);
   };
+  reset = () => {
+    this.setState({
+      clickedElements: [],
+      score: 0,
+      lost: false
+    });
+  };
   render() {
+    let lostGame;
+
+    if (this.state.lost) {
+      lostGame = (
+        <div className="float-center restart">
+          <h5>You lost! Try again!!</h5>
+          <button className="btn btn-outline-primary" onClick={this.reset}>Restart</button>
+        </div>
+      );
+    } else {
+      lostGame = (
+        <div className="row w-100 justify-content-center images-div">
+          {this.state.elements.map(result => (
+            <div className="in-img" style={{ width: "25%" }} key={result.id}>
+              <Element
+                value={result.img}
+                id={result.id}
+                onClick={this.handleOnClick}
+              />
+            </div>
+          ))}
+        </div>
+      );
+    }
     return (
-      <div className="row w-100 justify-content-center">
-        {this.state.elements.map(result => (
-          <div style={{ height: "300px", width: "25%" }} key={result.id}>
-            <Element
-              value={result.img}
-              id={result.id}
-              onClick={this.handleOnClick}
-            />
-          </div>
-        ))}
+      <div>
+        {
+          <Nav
+            highScore={this.state.highScore}
+            score={this.state.score}
+            lost={this.state.lost}
+          ></Nav>
+        }
+        {lostGame}
       </div>
     );
   }

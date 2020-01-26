@@ -1,5 +1,23 @@
+html{
+  font-family: sans-serif;
+  font-size: xx-large;
+  
+}
+
+body{
+  background-image: url(./blue-snow.png);
+}
+
 .App {
   text-align: center;
+}
+
+.navbar{
+  color:rgb(2, 113, 186);
+}
+
+.navbar-brand{
+  font-weight: bolder;
 }
 
 .App-logo {
@@ -34,5 +52,43 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.images-div{
+  padding: 0 10%;
+}
+
+img {
+  border: 3px solid #7b0100!important;
+  opacity: 1.0;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+img:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+  border: 3px solid #e48e00!important;
+}
+
+.restart{
+  margin-top: 100px;
+  color:#023d64;
+}
+
+.in-img {
+  height: 180px;
+}
+
+@media screen and (max-width: 992px) {
+  .in-img {
+    height: 115px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .in-img {
+    height: 115px;
   }
 }
