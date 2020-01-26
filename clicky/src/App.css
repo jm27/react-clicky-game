@@ -91,4 +91,9 @@ img:hover {
   .in-img {
     height: 115px;
   }
+  html{
+    font-family: sans-serif;
+    font-size: small;
+    
+  }
 }
