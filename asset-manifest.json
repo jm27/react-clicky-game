@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-clicky-game/static/css/main.5d067408.chunk.css",
+    "main.js": "/react-clicky-game/static/js/main.3a5bd72f.chunk.js",
+    "main.js.map": "/react-clicky-game/static/js/main.3a5bd72f.chunk.js.map",
+    "runtime-main.js": "/react-clicky-game/static/js/runtime-main.ad4fc7c2.js",
+    "runtime-main.js.map": "/react-clicky-game/static/js/runtime-main.ad4fc7c2.js.map",
+    "static/js/2.46ba947a.chunk.js": "/react-clicky-game/static/js/2.46ba947a.chunk.js",
+    "static/js/2.46ba947a.chunk.js.map": "/react-clicky-game/static/js/2.46ba947a.chunk.js.map",
+    "index.html": "/react-clicky-game/index.html",
+    "precache-manifest.e3f36f066ddeab7c5daaab4f46592d4f.js": "/react-clicky-game/precache-manifest.e3f36f066ddeab7c5daaab4f46592d4f.js",
+    "service-worker.js": "/react-clicky-game/service-worker.js",
+    "static/css/main.5d067408.chunk.css.map": "/react-clicky-game/static/css/main.5d067408.chunk.css.map",
+    "static/js/2.46ba947a.chunk.js.LICENSE": "/react-clicky-game/static/js/2.46ba947a.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad4fc7c2.js",
+    "static/js/2.46ba947a.chunk.js",
+    "static/css/main.5d067408.chunk.css",
+    "static/js/main.3a5bd72f.chunk.js"
+  ]
+}
