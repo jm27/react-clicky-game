@@ -18,7 +18,7 @@ Follow the instructions in this section to get the app setup to run on your mach
 
 Clone the git project to your machine (example below is using ssh)
 
-git clone git@github.com:jm27/react-clicky-game.git
+git clone 'git@github.com:jm27/react-clicky-game.git'
 Install the node module dependencies from the package.json file
 
 npm install
