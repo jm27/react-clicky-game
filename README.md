@@ -6,6 +6,8 @@
 
 ## Getting Started
 
+![Homepage](React-Clicky-Demo.gif)
+
 [Clicky-Game DEPLOYED LINK](https://jm27.github.io/react-clicky-game/ "Homepage")
 ======
 
